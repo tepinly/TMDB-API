@@ -12,6 +12,5 @@
 		"eslint-config": "*",
 		"tsconfig": "*"
 	},
-	"packageManager": "bun@1.0.21",
-	"workspaces": ["apps/*", "packages/*"]
+	"packageManager": "bun@1.0.21"
 }
