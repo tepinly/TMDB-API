@@ -1,0 +1,21 @@
+{
+  "name": "movie-app",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "eslint-config": "*",
+    "tsconfig": "*",
+    "prettier": "^3.2.5",
+    "turbo": "latest"
+  },
+  "packageManager": "bun@1.0.21",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
