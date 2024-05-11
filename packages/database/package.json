@@ -2,14 +2,15 @@
 	"name": "database",
 	"private": true,
 	"scripts": {
-		"build": "bun tsc"
+		"build": "bun tsc",
+		"lint": "biome check ."
 	},
 	"dependencies": {
 		"mongoose": "^8.3.4",
 		"dotenv": "^16.4.5"
 	},
 	"devDependencies": {
-		"eslint-config": "*",
+		"@biomejs/biome": "1.7.3",
 		"tsconfig": "*"
 	},
 	"packageManager": "bun@1.0.21"
