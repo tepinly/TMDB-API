@@ -11,5 +11,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["bun", "build"]
 CMD ["bun", "dev"]
