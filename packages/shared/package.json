@@ -1,0 +1,13 @@
+{
+	"name": "shared",
+	"private": true,
+	"scripts": {
+		"build": "bun tsc",
+		"lint": "biome check ."
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.7.3",
+		"tsconfig": "*"
+	},
+	"module": "src/index.ts"
+}
