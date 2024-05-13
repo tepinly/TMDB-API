@@ -12,8 +12,10 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.7.3",
+		"csv-parser": "*",
+		"database": "*",
 		"tsconfig": "*",
-		"database": "*"
+    "shared": "*"
 	},
 	"module": "src/index.ts"
 }
