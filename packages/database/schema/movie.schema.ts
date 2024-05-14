@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 export const MovieSchema = new mongoose.Schema({
 	position: {
-    2024: Number,
+		2024: Number,
 		2023: Number,
 		2022: Number,
 	},
