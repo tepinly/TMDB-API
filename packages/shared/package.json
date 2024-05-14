@@ -2,8 +2,7 @@
 	"name": "shared",
 	"private": true,
 	"scripts": {
-		"build": "bun tsc",
-		"lint": "biome check ."
+		"build": "bun tsc"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.7.3",

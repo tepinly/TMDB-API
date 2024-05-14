@@ -48,7 +48,7 @@
 				"noUselessRename": "error",
 				"noUselessSwitchCase": "error",
 				"useArrowFunction": "error",
-				"useLiteralKeys": "warn"
+				"useLiteralKeys": "off"
 			},
 			"correctness": {
 				"noConstAssign": "error",

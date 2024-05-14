@@ -4,14 +4,12 @@
 	"scripts": {
 		"dev": "bun run --hot src/index.ts",
 		"build": "bun tsc",
-		"start": "bun run src/index.ts",
-		"lint": "biome check ."
+		"start": "bun run src/index.ts"
 	},
 	"dependencies": {
 		"hono": "^4.3.4"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.7.3",
 		"csv-parser": "*",
 		"database": "*",
 		"tsconfig": "*",

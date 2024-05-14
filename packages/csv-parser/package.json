@@ -2,8 +2,7 @@
 	"name": "csv-parser",
 	"private": true,
 	"scripts": {
-		"build": "bun tsc",
-		"lint": "biome check ."
+		"build": "bun tsc"
 	},
 	"dependencies": {
     "zod": "^3.23.8",
@@ -11,7 +10,6 @@
 
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.7.3",
 		"tsconfig": "*"
 	}
 }
