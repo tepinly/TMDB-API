@@ -7,6 +7,9 @@
     "lint": "biome check .",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
+  "dependencies": {
+    "typescript": "^5.4.5"
+  },
   "devDependencies": {
     "@biomejs/biome": "1.7.3",
     "prettier": "^3.2.5",
