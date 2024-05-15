@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
 import { UserSchema } from './user.schema'
+import papr from '../lib/papr'
 
-export const User = mongoose.model('users', UserSchema)
+export const User = papr.model('users', UserSchema)

@@ -1,21 +1,8 @@
 import parse from 'csv-simple-parser'
 import { isNumeric } from 'shared'
 import { z } from 'zod'
-
-const MovieRecord = z.object({
-	position: z.object({
-		2024: z.number().nullable(),
-		2023: z.number().nullable(),
-		2022: z.number().nullable(),
-	}),
-	title: z.string(),
-	director: z.string(),
-	year: z.number().nullable(),
-	country: z.string(),
-	length: z.number().nullable(),
-	genre: z.string(),
-	colour: z.string(),
-})
+import { CreateMovies } from 'movie'
+import type { movieZodSchema } from 'schema'
 
 const CsvInitial = z.object({
 	Pos: z.string(),
@@ -31,7 +18,7 @@ const CsvInitial = z.object({
 })
 
 export const parseCSV = async (file: File) => {
-	const records: z.infer<typeof MovieRecord>[] = []
+	const records: z.infer<typeof movieZodSchema>[] = []
 	const csv = parse(await file.text(), { header: true }) as z.infer<
 		typeof CsvInitial
 	>[]
@@ -52,5 +39,6 @@ export const parseCSV = async (file: File) => {
 			colour: record['Colour'],
 		})
 	}
-	console.log(records)
+
+	await CreateMovies(records)
 }

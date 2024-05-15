@@ -3,7 +3,7 @@ import { connect } from 'database'
 import { Hono } from 'hono'
 
 const app = new Hono()
-await connect()
+await connect().then(() => console.log('Connected to MongoDB'))
 
 app.get('/', (c) => {
 	return c.text('Hono')

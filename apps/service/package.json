@@ -7,13 +7,14 @@
 		"start": "bun run src/index.ts"
 	},
 	"dependencies": {
-		"hono": "^4.3.4"
+		"hono": "^4.3.4",
+    "movie": "*",
+    "shared": "*",
+    "database": "*",
+    "csv-parser": "*"
 	},
 	"devDependencies": {
-		"csv-parser": "*",
-		"database": "*",
-		"tsconfig": "*",
-    "shared": "*"
+		"tsconfig": "*"
 	},
 	"module": "src/index.ts"
 }

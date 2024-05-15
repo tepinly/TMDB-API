@@ -5,7 +5,8 @@
 		"build": "bun tsc"
 	},
 	"dependencies": {
-		"mongoose": "^8.3.4",
+		"papr": "^15.2.1",
+    "mongodb": "^6.6.1",
 		"dotenv": "^16.4.5"
 	},
 	"devDependencies": {

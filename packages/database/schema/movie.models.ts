@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import papr from '../lib/papr'
 import { MovieSchema } from './movie.schema'
 
-export const Movie = mongoose.model('movies', MovieSchema)
+export const Movie = papr.model('movies', MovieSchema)
