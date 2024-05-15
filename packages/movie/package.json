@@ -1,0 +1,14 @@
+{
+	"name": "movie",
+	"private": true,
+	"scripts": {
+		"build": "bun tsc"
+	},
+	"dependencies": {
+    "database": "*"
+	},
+	"devDependencies": {
+		"tsconfig": "*"
+	},
+	"packageManager": "bun@1.0.21"
+}

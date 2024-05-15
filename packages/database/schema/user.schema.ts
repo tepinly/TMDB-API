@@ -1,10 +1,6 @@
-import mongoose, { Schema } from 'mongoose'
+import { schema, types } from 'papr'
 
-export const UserSchema = new mongoose.Schema({
-	username: String,
-	movies: [
-		{
-			id: { type: Schema.Types.ObjectId, ref: 'movies' },
-		},
-	],
+export const UserSchema = schema({
+	username: types.string(),
+	favourites: types.objectId(),
 })
