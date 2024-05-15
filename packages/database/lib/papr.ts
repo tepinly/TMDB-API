@@ -6,19 +6,19 @@ export const client = new MongoClient(
 	process.env.DATABASE_URL ?? 'mongodb://localhost:27019/movieapp',
 )
 
-const papr = new Papr()
+export const paprInstance = new Papr()
 
 export async function connect() {
 	await client.connect()
 
-	papr.initialize(client.db('movieapp'))
-	papr.updateSchemas()
+	paprInstance.initialize(client.db('movieapp'))
+	paprInstance.updateSchemas()
 
-	await papr.updateSchemas()
+	await paprInstance.updateSchemas()
 }
 
 export async function disconnect() {
 	await client.close()
 }
 
-export default papr
+export * as papr from 'papr'

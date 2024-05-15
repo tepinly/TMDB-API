@@ -5,7 +5,8 @@
 		"build": "bun tsc"
 	},
 	"dependencies": {
-    "database": "*"
+    "database": "*",
+    "shared": "*"
 	},
 	"devDependencies": {
 		"tsconfig": "*"

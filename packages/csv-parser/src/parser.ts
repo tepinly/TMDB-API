@@ -1,8 +1,8 @@
 import parse from 'csv-simple-parser'
-import { isNumeric } from 'shared'
-import { z } from 'zod'
 import { CreateMovies } from 'movie'
 import type { movieZodSchema } from 'schema'
+import { isNumeric } from 'shared'
+import { z } from 'zod'
 
 const CsvInitial = z.object({
 	Pos: z.string(),

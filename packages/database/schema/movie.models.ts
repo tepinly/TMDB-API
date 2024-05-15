@@ -1,4 +1,4 @@
-import papr from '../lib/papr'
+import { paprInstance } from '../lib/papr'
 import { MovieSchema } from './movie.schema'
 
-export const Movie = papr.model('movies', MovieSchema)
+export const Movie = paprInstance.model('movies', MovieSchema)
