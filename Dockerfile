@@ -7,6 +7,8 @@ COPY package*.json ./
 
 RUN bun install
 
+RUN bun run build
+
 COPY . .
 
 EXPOSE 8080

@@ -21,6 +21,9 @@ app.get('/movies', async (c) => {
 
 app.get('/movies/:id', async (c) => {
 	const params = c.req.param()
+  if (!ObjectId.isValid(params.id)) {
+    return c.text('invalid id')
+  }
 	const _id = new ObjectId(params.id)
 	const result = await FindMovie({ _id })
 	return c.json({ result })
