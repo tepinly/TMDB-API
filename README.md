@@ -1,81 +1,102 @@
-# Turborepo starter
+# Movie App
 
-This is an official starter Turborepo.
+An API for uploading, bookmarking & obtaining movie data from TMDB
 
-## Using this example
+> [!NOTE]
+> This project requires bun & node.js install beforehand
 
-Run the following command:
+## API
 
-```sh
-npx create-turbo@latest
-```
+### `GET /movies`
 
-## What's inside?
+Returns list of movies
+***
 
-This Turborepo includes the following packages/apps:
+**Query parameters**
+- `searchTerm` - Searches through
+  - Title
+  - Director
+  - Country
+  - Genre
+  - Colour
+- `pageSize` - Specify page size
+- `pageNumber` - Specify page number
 
-### Apps and Packages
+### `GET /movies/:id`
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/tsconfig`: `tsconfig.json`s used throughout the monorepo
+Returns movie for given id
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+**Parameters**
+- `id` - Movie id
+***
 
-### Utilities
+### `POST /upload`
 
-This Turborepo has some additional tools already setup for you:
+Uploads csv file with specified movie fields to store in the database
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+**Form fields**
+- `file` - the csv file containing the records
+***
 
-### Build
+### `POST /generate-token`
 
-To build all apps and packages, run the following command:
+Generates a token for a uniquely registered username, can only be generated once & will not be retrieved if lost
 
-```
-cd my-turborepo
-pnpm build
-```
+**Body values**
+- `username` - Desired username associated with token
+***
 
-### Develop
+### `POST /bookmark-movie`
 
-To develop all apps and packages, run the following command:
+- Allows a user to add movie to their collection of bookmarks
+- Once a movie is bookmarked, additional info is obtained & permanently stored from TMDB's API.
+- Bookmarked movies will only be bookmarked once
 
-```
-cd my-turborepo
-pnpm dev
-```
+**Body values**
+- `username` - User's username
+- `token` - Associated token
+- `movieId` - Movie id to be bookmarked
+***
 
-### Remote Caching
+### `POST /bookmarks`
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+Returns a list of bookmarked movie ids associated to the user
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+**Body values**
+- `username` - User's username
+- `token` - Associated token
 
-```
-cd my-turborepo
-npx turbo login
-```
+## Environment variables
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+- **DATABASE_URL**: Database connection url
+- **TMDB_KEY**: TMDB API key
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+## Setup
 
-```
-npx turbo link
-```
+- Clone the repository
+- Run
+  - `bun i`
+  - `bun run build`
+  - `bun dev`
 
-## Useful Links
+## Docker
 
-Learn more about the power of Turborepo:
+### Compose
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+- `docker compose up -d`
+
+### Ports
+
+- MongoDB: `27019:27017`
+- App: `8080`
+
+## Known issues
+
+- Lack of endpoint body & query parameter type checking
+- Error handling edge cases
+- Lack of CRUD endpoints
+- API security is too simple
+  - Relying token generation per user
+  - Tokens are generated once and cannot be changed
+  - No token encryption in database
+- No database seeds for movies
