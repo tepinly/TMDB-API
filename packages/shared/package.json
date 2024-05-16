@@ -4,8 +4,12 @@
 	"scripts": {
 		"build": "bun tsc"
 	},
+	"dependencies": {
+		"uuid": "^9.0.1"
+	},
 	"devDependencies": {
+		"@types/uuid": "^9.0.8",
 		"tsconfig": "*"
 	},
-	"module": "src/index.ts"
+	"packageManager": "bun@1.0.21"
 }
