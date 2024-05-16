@@ -5,7 +5,7 @@ An API for uploading, bookmarking & obtaining movie data from TMDB
 > [!NOTE]
 > This project requires bun & node.js installion beforehand
 
-## API
+# API
 
 ### `GET /movies`
 
@@ -66,12 +66,12 @@ Returns a list of bookmarked movie ids associated to the user
 - `username` - User's username
 - `token` - Associated token
 
-## Environment variables
+# Environment variables
 
 - **DATABASE_URL**: Database connection url
 - **TMDB_KEY**: TMDB API key
 
-## Setup
+# Setup
 
 - Clone the repository
 - Run
@@ -79,7 +79,7 @@ Returns a list of bookmarked movie ids associated to the user
   - `bun run build`
   - `bun dev`
 
-## Docker
+# Docker
 
 ### Compose
 
@@ -90,7 +90,7 @@ Returns a list of bookmarked movie ids associated to the user
 - MongoDB: `27019:27017`
 - App: `8080`
 
-## Known issues
+# Known issues
 
 - Lack of endpoint body & query parameter type checking
 - Error handling edge cases
