@@ -10,7 +10,6 @@ An API for uploading, bookmarking & obtaining movie data from TMDB
 ### `GET /movies`
 
 Returns list of movies
-***
 
 **Query parameters**
 - `searchTerm` - Searches through
@@ -21,6 +20,7 @@ Returns list of movies
   - Colour
 - `pageSize` - Specify page size
 - `pageNumber` - Specify page number
+***
 
 ### `GET /movies/:id`
 
