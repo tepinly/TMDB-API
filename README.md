@@ -3,7 +3,7 @@
 An API for uploading, bookmarking & obtaining movie data from TMDB
 
 > [!NOTE]
-> This project requires bun & node.js install beforehand
+> This project requires bun & node.js installion beforehand
 
 ## API
 
