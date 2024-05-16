@@ -33,7 +33,7 @@ export const findMovies = async (args: {
 
 	return {
 		records,
-		pageNumber: skip + 1,
+		pageNumber: pageNumber ? +pageNumber : 1,
 		pageSize: limit,
 		recordCount,
 	}
@@ -41,4 +41,11 @@ export const findMovies = async (args: {
 
 export const findMovie = async (query: papr.PaprFilter<TMovie>) => {
 	return await Movie.findOne(query)
+}
+
+export const updateMovie = async (args: {
+	query: papr.PaprFilter<TMovie>
+	data: Partial<(typeof Movie)['updateOne']>
+}) => {
+	return await Movie.updateOne(args.query, { $set: args.data })
 }

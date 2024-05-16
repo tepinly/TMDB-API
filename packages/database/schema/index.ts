@@ -1,6 +1,7 @@
 // User
 export * from './user.models'
 export * from './user.schema'
+export * from './user.types'
 
 // Movie
 export * from './movie.models'

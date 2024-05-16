@@ -1,6 +1,7 @@
 import { schema, types } from 'papr'
 
 export const MovieSchema = schema({
+	// Original fields
 	position: types.object({
 		2024: types.number(),
 		2023: types.number(),
@@ -13,6 +14,8 @@ export const MovieSchema = schema({
 	length: types.number(),
 	genre: types.string({ required: true }),
 	colour: types.string({ required: true }),
+	// TMDB fields
+	adult: types.boolean(),
 	tagline: types.string(),
 	overview: types.string(),
 	spokenLanguages: types.object({
@@ -22,4 +25,5 @@ export const MovieSchema = schema({
 	}),
 	poster: types.string(),
 	homepage: types.string(),
+	cached: types.boolean(),
 })
