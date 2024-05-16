@@ -1,0 +1,15 @@
+{
+	"name": "user",
+	"private": true,
+	"scripts": {
+		"build": "bun tsc"
+	},
+	"dependencies": {
+    "database": "*",
+    "shared": "*"
+	},
+	"devDependencies": {
+		"tsconfig": "*"
+	},
+	"packageManager": "bun@1.0.21"
+}
